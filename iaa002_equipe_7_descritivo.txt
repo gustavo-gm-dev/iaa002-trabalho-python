@@ -1,0 +1,17 @@
+1. Análise Exploratória dos dados
+1.f) Dê um breve explicação (máximo de quatro linhas) sobre os principais resultados encontrados na Análise Exploratória dos dados
+    Foram identificados e tratados valores faltantes e duplicados, garantindo maior qualidade da base de dados. Algumas variáveis foram convertidas para o formato numérico para possibilitar a análise correta. Observou-se também uma variação significativa nos preços dos veículos. Isso indica diversidade entre marcas, modelos e características técnicas.
+
+2. Visualização dos dados
+2.e) Dê uma breve explicação (máximo de quatro linhas) sobre os resultados gerados no item d
+    Veículos com câmbio automático apresentam preços médios mais altos em comparação aos manuais. Também é possível observar variações entre as marcas com maior dispersão de preços e presença de outliers, indicando os modelos mais caros. Conclui-se que o tipo de engrenagem e marca influenciam diretamente no valor dos carros.
+
+2.g) Dê uma breve explicação (máximo de quatro linhas) sobre os resultados gerados no item f
+    O gráfico mostra que os carros movidos a diesel tem preços mais altos e maior variação de preço, os veículos a gasolina possuem preços intermediários e os movidos a alcool tendem a ter preços mais baixos. Observa-se que há diferenças entre as marcas, com algumas apresentando maior dispersão de preços e presença de veículos mais caros. 
+
+3. Aplicação de modelos de machine learning para prever o preço médio dos carros
+3.f) Dê uma breve explicação (máximo de quatro linhas) sobre os resultados encontrados na análise de importância de variáveis
+    A análise de importância das variáveis mostrou que engine_size, year_model e fuel_Diesel são as que mais influenciam a previsão dos preços. Veículos com motores maiores e mais novos tendem a possuir valores mais elevados. O tipo de combustível também impacta o preço, destacando-se os veículos a diesel.
+
+3.h) Dê uma breve explicação (máximo de quatro linhas) sobre  qual modelo gerou o melhor resultado e a métrica de avaliação utilizada
+    O modelo XGBoost apresentou melhor desempenho, com menores valores de MSE e MAE e maior R². Isso indica maior precisão e melhor capacidade de explicação da variação dos preços. Portanto, foi o modelo mais adequado para a previsão.
