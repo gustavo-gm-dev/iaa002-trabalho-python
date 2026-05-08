@@ -5,7 +5,7 @@
 #########################################
 
 # Carregando a Base
-load("~/Documents/Estatistica Aplicada/Trabalho Final/salarios.RData")
+load("C:/Users/Gustoso/Documents/UFPR - Conteudo/IAA002 - Linguagem de Programacao Aplicada/trabalho/iaa002-trabalho-python/TRABALHO_DE_IAA004/salarios.RData")
 
 #########################################
 
