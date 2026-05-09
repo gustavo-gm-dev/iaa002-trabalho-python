@@ -21,15 +21,14 @@ dat <- salarios %>%
   gather(key = "conjuge", value = "idade", age, husage) %>%
   convert_as_factor(conjuge)
 
-# Vamos ver alguns registros dos dados organizados
-head(dat, 3)
-
+# View(dat)
 
 # 2. ESTATÍSTICAS DESCRITIVAS E INTERVALOS DE CONFIANÇA
 # ---------------------------------------------------------------
 # Calculando algumas estatisticas descritivas por grupo, 
 # inclusive o intervalo de confianca das medianas, exigido na Obs 2.
-descritiva <- dat %>% group_by(conjuge) %>% 
+descritiva <- dat %>% 
+  group_by(conjuge) %>% 
   summarise(n=n(), 
             mean=mean(idade, na.rm = TRUE), 
             sd=sd(idade, na.rm = TRUE),
@@ -45,40 +44,28 @@ descritiva <- dat %>% group_by(conjuge) %>%
 print(descritiva)
 # Os intervalos de confianca inferiores sao LCLmed e superiores sao UCLmed.
 
-
-# 3. TESTE DE NORMALIDADE (JUSTIFICATIVA DA OBS 1)
-# ---------------------------------------------------------------
-# Como N > 5000, aplicamos Kolmogorov-Smirnov para justificar 
-# o teste nao parametrico.
-ks.test(salarios$age, "pnorm", mean(salarios$age, na.rm=TRUE), sd(salarios$age, na.rm=TRUE))
-ks.test(salarios$husage, "pnorm", mean(salarios$husage, na.rm=TRUE), sd(salarios$husage, na.rm=TRUE))
-# P-valor < 0.05 indica que os dados nao sao normais.
-
-
-# 4. TESTE DE HIPÓTESES (MANN-WHITNEY / WILCOXON)
+# 3. TESTE DE HIPÓTESES (MANN-WHITNEY / WILCOXON)
 # ---------------------------------------------------------------
 # H0: nao existe diferenca entre as medianas dos diferentes grupos
 # Ha: existe diferenca entre as medianas dos diferentes grupos
 
 # Usaremos o teste de postos de Wilcoxon para amostras independentes
 teste_wilcoxon <- wilcox.test(idade ~ conjuge, data = dat, conf.int = TRUE)
+
 print(teste_wilcoxon)
 
 # Como o p-value < 0.05, rejeitamos H0. 
 # Existe diferenca significativa entre as idades de maridos e esposas.
 
 
-# 5. VISUALIZAÇÃO DOS DADOS (BOX-PLOT)
+# 4. VISUALIZAÇÃO DOS DADOS (BOX-PLOT)
 # ---------------------------------------------------------------
 # Vamos vizualizar algumas observacoes e criar o box-plot,
 # mantendo o padrao de cores e layout ensinado nas Secoes 5.4 e 5.5
-grafico_sino <- ggdensity(dat, x = "idade",
-          add = "mean", rug = TRUE,
-          color = "conjuge", fill = "conjuge",
-          palette = c("#00AFBB", "#FC4E07"),
-          xlab = "Idade (anos)", ylab = "Densidade",
-          title = "Curva de Densidade das Idades")
+grafico <- ggboxplot(dat, x="conjuge", y="idade", 
+          color = "conjuge", palette = c("#00AFBB", "#FC4E07"),
+          ylab = "Idade (anos)", xlab = "Cônjuge",
+          title = "Comparação das Medianas: Esposas (age) vs Maridos (husage)")
 
-print(grafico_sino)
-
-#################################################################
+# Exibe o grafico
+print(grafico)
