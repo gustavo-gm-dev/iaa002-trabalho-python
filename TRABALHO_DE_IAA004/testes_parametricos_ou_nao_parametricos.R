@@ -13,7 +13,7 @@ library("tidyverse")
 # 1. PREPARANDO OS DADOS
 # ---------------------------------------------------------------
 # Carrega a base de dados
-load("C:/Users/Gustoso/Documents/UFPR - Conteudo/IAA002 - Linguagem de Programacao Aplicada/trabalho/iaa002-trabalho-python/TRABALHO_DE_IAA004/salarios.RData")
+load("C:/Users/deuss/Documents/IAA/IAA004/iaa002-trabalho-python/TRABALHO_DE_IAA004/salarios.RData")
 
 # Criando uma coluna para quem é a pessoa e outra para a idade.
 dat <- salarios %>%
@@ -24,7 +24,17 @@ dat <- salarios %>%
 
 # 2. ESTATÍSTICAS DESCRITIVAS E INTERVALOS DE CONFIANÇA
 # ---------------------------------------------------------------
-# Calculando estatisticas descritivas e o IC das medianas (Obs 2)
+# 2.1 Verificação da normalidade das variáveis (teste de Shapiro-Wilk)
+# utilizada para definição do teste estatístico apropriado
+set.seed(123)
+
+shapiro.test(sample(salarios$age, 5000))
+shapiro.test(sample(salarios$husage, 5000))
+
+hist(salarios$age)
+hist(salarios$husage)
+
+# 2.2 Estatísticas descritivas e intervalos de confiança
 descritiva <- dat %>% 
   group_by(conjuge) %>% 
   summarise(n=n(), 
