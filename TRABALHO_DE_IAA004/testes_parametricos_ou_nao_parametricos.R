@@ -13,7 +13,7 @@ library("tidyverse")
 # 1. PREPARANDO OS DADOS
 # ---------------------------------------------------------------
 # Carrega a base de dados
-load("C:/Users/deuss/Documents/IAA/IAA004/iaa002-trabalho-python/TRABALHO_DE_IAA004/salarios.RData")
+load("C:/Users/Gustoso/Documents/UFPR - Conteudo/IAA002 - Linguagem de Programacao Aplicada/trabalho/iaa002-trabalho-python/TRABALHO_DE_IAA004/salarios.RData")
 
 # Criando uma coluna para quem é a pessoa e outra para a idade.
 dat <- salarios %>%
@@ -62,7 +62,7 @@ grafico_sino <- ggdensity(dat, x = "idade",
           xlab = "Idade (anos)", ylab = "Densidade",
           title = "Curva de Densidade: Prova Visual da Assimetria")
 
-print(grafico_sino)
+# print(grafico_sino)
 
 
 # 4. TESTE DE HIPÓTESES (MANN-WHITNEY / WILCOXON)
@@ -81,4 +81,4 @@ grafico_box <- ggboxplot(dat, x="conjuge", y="idade",
           ylab = "Idade (anos)", xlab = "Cônjuge",
           title = "Comparação das Medianas: Esposas (age) vs Maridos (husage)")
 
-print(grafico_box)
+# print(grafico_box)
