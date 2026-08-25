@@ -1,4 +1,4 @@
-a,Comp,Circ,DCirc,RadRa,PrAxisRa,MaxLRa,ScatRa,Elong,PrAxisRect,MaxLRect,ScVarMaxis,ScVarmaxis,RaGyr,SkewMaxis,Skewmaxis,Kurtmaxis,KurtMaxis,HollRa,Class
+a,Comp,Circ,DCirc,RadRa,PrAxisRa,MaxLRa,ScatRa,Elong,PrAxisRect,MaxLRect,ScVarMaxis,ScVarmaxis,RaGyr,SkewMaxis,Skewmaxis,Kurtmaxis,KurtMaxis,HollRa,tipo
 1,95,48,83,178,72,10,162,42,20,159,176,379,184,70,6,16,187,197,van
 2,91,41,84,141,57,9,149,45,19,143,170,330,158,72,9,14,189,199,van
 3,104,50,106,209,66,10,207,32,23,158,223,635,220,73,14,9,188,196,saab
