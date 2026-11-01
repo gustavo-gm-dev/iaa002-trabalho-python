@@ -27,7 +27,6 @@ Tarefas:
 6. Aplique os modelos treinados nos dados de teste.
 7. Calcule as métricas de Sensibilidade, Especificidade e F1-Score com base em suas matrizes de confusão.
 8. Indique qual modelo dá o melhor o resultado e a métrica utilizada
-9. Utilize a base de dados de Treino já separadas em treino e validação do exercício anterior.
 
 ## 2 Redes Neurais
 
@@ -35,10 +34,11 @@ Utilize as duas bases do exercício anterior para treinar as Redes Neurais Convo
 
 Tarefas:
 
-1. Treine modelos VGG16 e Resnet50 adaptadas com e sem *Data Augmentation*
-2. Aplique os modelos treinados nas imagens da base de **Teste**
-3. Calcule as métricas de Sensibilidade, Especificidade e F1-Score com base em suas matrizes de confusão.
-4. Indique qual modelo dá o melhor o resultado e a métrica utilizada
+1. Utilize a base de dados de Treino já separadas em treino e validação do exercício anterior.
+2. Treine modelos VGG16 e Resnet50 adaptadas com e sem *Data Augmentation*
+3. Aplique os modelos treinados nas imagens da base de **Teste**
+4. Calcule as métricas de Sensibilidade, Especificidade e F1-Score com base em suas matrizes de confusão.
+5. Indique qual modelo dá o melhor o resultado e a métrica utilizada
 
 ---
 
